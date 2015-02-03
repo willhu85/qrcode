@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维码生成器</title>
+   	<style>
+   		#qrcodewrap {
+   			width: 240px;
+   			padding: 0 10px 10px;
+   			text-align: center;
+   		}
+   		#qrcode{
+   			display: inline-block;
+   			height: 240px;
+   		}
+   		#text {
+   			padding-top: 10px;
+   			font-size: 20px;
+   		}
+   		#httpinput {
+   			width: 98%;
+   			height: 28px;
+   			margin-bottom: 10px;
+   			padding: 2px;
+   			border: 1px solid #ccc;
+   			border-radius: 5px;
+   			font-size: 12px;
+   		}
+   		@-webkit-keyframes shake {
+   			0% {
+   				-webkit-transform: translateX(-5px);
+   				transform: translateX(-5px);
+   			}
+   			25% {
+   				-webkit-transform: translateX(5px);
+   				transform: translateX(5px);
+   			}
+   			50% {
+   				-webkit-transform: translateX(-5px);
+   				transform: translateX(-5px);
+   			}
+   			75% {
+   				-webkit-transform: translateX(5px);
+   				transform: translateX(5px);
+   			}
+   			100% {
+   				-webkit-transform: translateX(0);
+   				transform: translateX(0);
+   			}
+   		}
+   		@keyframes shake {
+   			0% {
+   				-webkit-transform: translateX(-5px);
+   				transform: translateX(-5px);
+   			}
+   			25% {
+   				-webkit-transform: translateX(5px);
+   				transform: translateX(5px);
+   			}
+   			50% {
+   				-webkit-transform: translateX(-5px);
+   				transform: translateX(-5px);
+   			}
+   			75% {
+   				-webkit-transform: translateX(5px);
+   				transform: translateX(5px);
+   			}
+   			100% {
+   				-webkit-transform: translateX(0);
+   				transform: translateX(0);
+   			}
+   		}
+   		#httpinput.error {
+   			border-color: #F15353;
+   			background-color: #fbcbcb;
+   			color: #F15353;
+   			-webkit-animation: shake .3s, ease;
+   			animation: shake .3s, ease;
+   		}
+   		#qrcodebtn {
+   			display: block;
+   			padding: 8px;
+   			border-radius: 5px;
+   			background-color: #F15353;
+   			color: #FFF;
+   			font-size: 14px;
+   			text-decoration: none;
+   		}
+   		#qrcodebtn:hover{
+   			opacity: .8;
+   		}
+   	</style>
+</head>
+<body>
+    	<div id="qrcodewrap">
+    		<h2>扫我扫我扫我^_^</h2>
+    		<!--<p >URL:<strong id="url"></strong></p>-->
+    		<div id="qrcode"></div>
+    		<div id="text">
+    			<input type="text" id="httpinput" placeholder="输入网址快速生成二维码" />
+    			<a href="javascript:;" id="qrcodebtn">快速生成二维码</a>
+    		</div>
+    	</div>
+<script src="jquery.min.js"></script>
+<script src="jquery.qrcode.min.js"></script>
+<script src="myscript.js"></script>
+</body>
+</html>
