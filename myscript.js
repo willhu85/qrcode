@@ -9,9 +9,17 @@ $(function(){
 		//$("#url").html(url)
 	};
 	var currTitle, currUrl;
-	chrome.tabs.getSelected(function(tabs){
-		currUrl = tabs.url; 
-		qrcodeFun(currUrl)
+	// chrome.tabs.getSelected(function(tabs) {
+	//     currUrl = tabs.url; 
+	// 	qrcodeFun(currUrl);
+	// 	console.log(currUrl);
+	// });
+	chrome.tabs.query({
+		active: true
+	}, function(tabs) {
+		currUrl = tabs[0].url; 
+		qrcodeFun(currUrl);
+		console.log(currUrl);
 	})
 	var eleQrcodeBtn = $("#qrcodebtn");
 	var eleHttpinput = $("#httpinput");
