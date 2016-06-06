@@ -1,6 +1,8 @@
+var errMsg = "不能输入空值";
 $(function(){
 	var lang = chrome.i18n.getUILanguage();
 	console.log("Chrome UI language is" + lang);
+
 	if(lang != "zh-CN" && lang != "zh-TW")
 	{
 		SetLabels();
@@ -33,8 +35,8 @@ $(function(){
 	var eleQrcodeBtn = $("#qrcodebtn");
 	var eleHttpinput = $("#httpinput");
 	eleQrcodeBtn.bind("click", function() {
-		if (eleHttpinput.val() == "" || eleHttpinput.val() == "不能输入空值") {
-			eleHttpinput.addClass("error").val("不能输入空值");
+		if (eleHttpinput.val() == "" || eleHttpinput.val() == errMsg) {
+			eleHttpinput.addClass("error").val(errMsg);
 			setTimeout(function() {
 				eleHttpinput.removeClass("error").val("");
 			}, 3000);
@@ -44,12 +46,13 @@ $(function(){
 	});
 	eleHttpinput.bind("focus", function() {
 		eleHttpinput.removeClass("error").val("");
-	})
+		})
 })
 
-SetLabels = function ()
-{
-	title.textContent= "Scan QR Code^_^";
-	httpinput.placeholder = "Input content to generate QR Code";
-	qrcodebtn.textContent = "Generate QR Code";
-}
+	SetLabels = function ()
+	{
+		title.textContent= "Scan QR Code^_^";
+		httpinput.placeholder = "Input content to generate QR Code";
+		qrcodebtn.textContent = "Generate QR Code";
+		errMsg = 'Please input something!';
+	};
