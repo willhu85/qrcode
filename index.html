@@ -93,12 +93,12 @@
 </head>
 <body>
     	<div id="qrcodewrap">
-    		<h2>扫我扫我扫我^_^</h2>
-    		<!--<p >URL:<strong id="url"></strong></p>-->
+    		<h2 id="title">扫我扫我扫我^_^</h2>
+    		<p style="display:none">Content: <strong id="url"></strong></p>
     		<div id="qrcode"></div>
     		<div id="text">
-    			<input type="text" id="httpinput" placeholder="输入网址快速生成二维码" />
-    			<a href="javascript:;" id="qrcodebtn">快速生成二维码</a>
+    			<textarea  id="httpinput" placeholder="输入内容生成二维码"></textarea>
+    			<a href="javascript:;" id="qrcodebtn">生成二维码</a>
     		</div>
     	</div>
 <script src="jquery.min.js"></script>
